@@ -11,8 +11,7 @@ const url = `https://api.github.com/search/issues?q=repo:${username}/${repoName}
 console.log(url);
 
 const token = "<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"; //.env not working
-//const headers = { Authorization: `Bearer ${token}`};
-//const headers = { linked: "1"};
+
 
 // construct the HTTP Request object. See: https://github.com/smartcontractkit/functions-hardhat-starter-kit#javascript-code
 // params used for URL query parameters
