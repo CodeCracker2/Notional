@@ -17,14 +17,14 @@ export default function CodersComp() {
       <div className="flex justify-center mt-6 ">
         <Link
           className="flex justify-between items-center w-12"
-          href="https://github.com/agmaso"
+          href="https://github.com/CodeCracker2"
           target="_blank"
         >
           <FaGithub />
         </Link>
         <Link
           className="flex justify-between items-center w-12"
-          href="https://twitter.com/CodeBlocker_52"
+          href="https://twitter.com/agmaso100"
           target="_blank"
         >
           <FaTwitter />
