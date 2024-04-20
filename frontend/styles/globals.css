@@ -2,32 +2,37 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  @apply bg-gradient-to-b from-gray-900 to-black;
 }
 
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  .bg-gradient-redPill {
+    background-image: conic-gradient(#d72a23 20deg, transparent 120deg);
+  }
+  .bg-gradient-bluePill {
+    background-image: conic-gradient(#3c56be 20deg, transparent 120deg);
+  }
+  .box::before {
+    @apply content-[''] absolute bg-gradient-redPill w-[550px] h-[550px] top-[-25%] left-[-45%] animate-fullSpin;
+  }
+
+  .box::after {
+    @apply rounded-full content-["Repo-Owner"] text-[#d72a23] text-4xl hover:scale-105 transition duration-300  w-[94%] h-[94%] absolute bg-black top-[3%] left-[3%] flex justify-center items-center uppercase tracking-[3px] font-medium animate-text;
+  }
+
+  .box2::before {
+    @apply content-[''] absolute bg-gradient-bluePill w-[550px] h-[550px] top-[-25%] left-[-45%] animate-fullSpin2;
+  }
+
+  .box2::after {
+    @apply rounded-full hover:scale-105 transition duration-300 content-["Developer"] text-[#3c56be] text-4xl w-[94%] h-[94%] absolute bg-black top-[3%] left-[3%] flex justify-center items-center uppercase tracking-[3px] font-medium;
+  }
+
+  .line {
+    @apply text-[1.5rem] sm:text-[3.5rem] text-center whitespace-nowrap overflow-hidden w-[22ch] animate-[typewriter_3s_steps(22)_1s,cursor_500ms_steps(22)_infinite] border-r-4 border-r-[rgba(230,181,57,0.7)];
+  }
+  .line2 {
+    @apply text-[1.5rem] sm:text-[3.5rem] text-center whitespace-nowrap overflow-hidden w-[30ch] animate-[typewriter2_3s_steps(30)_1s,cursor_500ms_steps(30)_infinite] border-r-4 border-r-[rgba(230,181,57,0.7)];
   }
 }
