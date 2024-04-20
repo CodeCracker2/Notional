@@ -3,9 +3,7 @@ import Link from "next/link";
 import {
   FaDiscord,
   FaGithub,
-  FaHeart,
   FaTwitter,
-  FaTwitterSquare,
 } from "react-icons/fa";
 
 export default function CodersComp() {
